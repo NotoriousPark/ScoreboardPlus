@@ -39,12 +39,14 @@ public class ScoreboardPlus extends JavaPlugin {
         pm.registerEvents(new PlayerWorldLeaveListener(this), this);
     }
 
+    //Saves the command name and arguments when a command is executed.
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         this.cmd = cmd;
         this.args = args;
         return true;
     }
 
+    //Adds tab suggestions for the new objectives.
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
         if (cmd.getName().equalsIgnoreCase("scoreboard") && args[0].equalsIgnoreCase("objectives") && (args[1].equalsIgnoreCase("add") || args[1].equalsIgnoreCase("remove")) && !args[2].isEmpty() && args[3].isEmpty()) {

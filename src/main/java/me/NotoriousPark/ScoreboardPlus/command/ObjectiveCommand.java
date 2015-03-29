@@ -12,6 +12,7 @@ import org.bukkit.scoreboard.ScoreboardManager;
 
 public class ObjectiveCommand extends ScoreboardPlus implements CommandExecutor {
 
+    //Accesses the /scoreboard command to register the new objectives
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("scoreboard") && args[0].equalsIgnoreCase("objective")) {
 
@@ -24,15 +25,19 @@ public class ObjectiveCommand extends ScoreboardPlus implements CommandExecutor 
                     if (!args[3].isEmpty()) {
                         for (Objectives obj : Objectives.values()) {
                             if (args[3].equalsIgnoreCase(obj.toString())) {
+
+                                //Sets the objectives display name to a dummy.
                                 board.getNewScoreboard().registerNewObjective(args[2], "dummy");
                                 getObjectiveMap().put(args[2], obj);
                                 getObjectivesList().add(args[2]);
 
+                                //Checks if it is a world objective
                                 if (args[3].equalsIgnoreCase(Objectives.playerWorldJoin.toString())) {
                                     if (args[4].isEmpty()) {
                                         sender.sendMessage(ChatColor.RED + "Invalid Syntax.");
                                         return false;
                                     } else {
+                                        //Registers worlds for world objectives.
                                         getObjectiveWorldMap().put(args[2], Bukkit.getWorld(args[4]));
                                         return true;
                                     }

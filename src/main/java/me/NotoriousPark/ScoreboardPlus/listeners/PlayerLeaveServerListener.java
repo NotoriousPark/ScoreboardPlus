@@ -12,6 +12,7 @@ public class PlayerLeaveServerListener extends ScoreboardPlus implements Listene
 
     public PlayerLeaveServerListener(ScoreboardPlus plugin) {}
 
+    //Removes points to the dummy score for each objective.
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         for (String s : getObjectivesList()) {

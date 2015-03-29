@@ -12,6 +12,7 @@ public class PlayerWorldJoinListener extends ScoreboardPlus implements Listener 
 
     public PlayerWorldJoinListener(ScoreboardPlus plugin) {}
 
+    //Adds points to the dummy score for each objective.
     @EventHandler
     public void onWorldJoin(PlayerChangedWorldEvent event) {
         for (String s : getObjectivesList()) {

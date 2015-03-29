@@ -12,6 +12,7 @@ public class PlayerJoinServerListener extends ScoreboardPlus implements Listener
 
     public PlayerJoinServerListener(ScoreboardPlus plugin) {}
 
+    //Adds points to the dummy score for each objective.
     @EventHandler
     public void onJoinServer(PlayerJoinEvent event) {
         for (String s : getObjectivesList()) {

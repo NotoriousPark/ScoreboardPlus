@@ -12,6 +12,7 @@ public class PlayerWorldLeaveListener extends ScoreboardPlus implements Listener
 
     public PlayerWorldLeaveListener(ScoreboardPlus plugin) {}
 
+    //Removes points to the dummy score for each objective.
     @EventHandler
     public void onWorldJoin(PlayerChangedWorldEvent event) {
         for (String s : getObjectivesList()) {
