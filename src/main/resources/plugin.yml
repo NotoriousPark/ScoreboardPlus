@@ -1,0 +1,6 @@
+name: ScoreboardPlus
+version: 1.0
+main: me.NotoriousPark.ScoreboardPlus.ScoreboardPlus
+
+description: Adds objectives to the /scoreboard command
+author: [NotoriousPark]
